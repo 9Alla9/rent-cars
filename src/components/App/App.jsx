@@ -1,7 +1,7 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
-import Home from 'pages/Home';
-import Catalog from 'pages/Catalog';
-import Favorites from 'pages/Favorites';
+import Home from '../../pages/Home';
+import Catalog from '../../pages/Catalog';
+import Favorites from '../../pages/Favorites';
 import { Toaster } from 'react-hot-toast';
 import { ContainerStyled } from './App.styled';
 
