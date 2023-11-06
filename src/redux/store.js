@@ -1,4 +1,5 @@
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
+import storage from 'redux-persist/lib/storage';
 import {
   persistStore,
   persistReducer,
@@ -9,7 +10,7 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
-import { advertsReducer } from './car/Slice';
+import { advertsReducer } from './adverts/advertsSlice';
 import { filtersReducer } from './filters/filtersSlice';
 
 const middleware = [
@@ -22,6 +23,7 @@ const middleware = [
 
 const advertPersistConfig = {
   key: 'favorite',
+  storage,
   whitelist: ['favoriteId'],
 };
 

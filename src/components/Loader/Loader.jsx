@@ -1,17 +1,17 @@
+import { LoaderWrap } from './Loader.styled';
 import { RotatingLines } from 'react-loader-spinner';
-import { LoaderStyled } from './Loader.styled.jsx';
 
-const Loader = () => {
+function Loader() {
   return (
-    <LoaderStyled>
+    <LoaderWrap>
       <RotatingLines
         strokeWidth="4"
         animationDuration="0.75"
         width="200"
         visible={true}
       />
-    </LoaderStyled>
+    </LoaderWrap>
   );
-};
+}
 
 export default Loader;

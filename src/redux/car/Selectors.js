@@ -8,3 +8,4 @@ export const selectAdvertById = (state, id) => {
 
   return advert;
 };
+

@@ -17,14 +17,14 @@ import {
   StyledXSVG,
 } from './Info.styled';
 import { selectAdvertById } from '../../redux/car/Selectors';
-import Button from '../Button/Button';
+import Button from '../Buttons/Button';
 
-function Info({ modalIsOpen, toggleModal, ...carData }) {
+function CarInfo({ modalIsOpen, toggleModal, ...carData }) {
   const { id, city, country, altText } = carData;
 
   const advert = useSelector(state => selectAdvertById(state, id));
   if (!advert) {
-    return <div>Car not found</div>;
+    return <div>Авто не знайдено</div>;
   }
   const {
     year,
@@ -114,4 +114,4 @@ function Info({ modalIsOpen, toggleModal, ...carData }) {
   );
 }
 
-export default Info;
+export default CarInfo;

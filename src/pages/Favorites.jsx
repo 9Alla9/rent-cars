@@ -1,7 +1,7 @@
-import FavoriteGallery from '../components/FavoriteGallery/FavoriteGallery';
+import Gallery from '../components/Gallery/Gallery';
 
 function Favorites() {
-  return <FavoriteGallery />;
+  return <Gallery />;
 }
 
 export default Favorites;

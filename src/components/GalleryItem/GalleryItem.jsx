@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Button from '../Button/Button';
+import Button from '../Buttons/Button';
 import {
   CarImg,
   DataItem,
@@ -9,17 +9,14 @@ import {
   Title,
   TitleWrap,
 } from './GalleryItem.styled';
-import ModalContainer from '../Modal/ModalContainer';
-import Info from '../Info/Info';
+import ModalContainer from '../Modal/Modal';
+import CarInfo from '../Info/Info';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectFavorites } from '../../redux/car/Selectors';
-import {
-  addFavoriteId,
-  removeFavoriteId,
-} from '../../redux/car/Slice';
+import { addFavoriteId, removeFavoriteId } from '../../redux/car/Slice';
 import { toast } from 'react-hot-toast';
 
-function GalleryItem({ data }) {
+function CarGalleryItem({ data }) {
   const {
     id,
     year,
@@ -120,7 +117,7 @@ function GalleryItem({ data }) {
       </DataWrap>
       <Button width={274} text="Learn more" onClick={toggleModal} />
       <ModalContainer isOpen={modalIsOpen} onRequestClose={toggleModal}>
-        <Info
+        <CarInfo
           modalIsOpen={modalIsOpen}
           toggleModal={toggleModal}
           id={id}
@@ -133,4 +130,4 @@ function GalleryItem({ data }) {
   );
 }
 
-export default GalleryItem;
+export default CarGalleryItem;
