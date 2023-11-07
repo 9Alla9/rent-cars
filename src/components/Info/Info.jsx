@@ -19,7 +19,7 @@ import {
 import { selectAdvertById } from '../../redux/car/Selectors';
 import Button from '../Buttons/Button';
 
-function CarInfo({ modalIsOpen, toggleModal, ...carData }) {
+function Info({ modalIsOpen, toggleModal, ...carData }) {
   const { id, city, country, altText } = carData;
 
   const advert = useSelector(state => selectAdvertById(state, id));
@@ -114,4 +114,4 @@ function CarInfo({ modalIsOpen, toggleModal, ...carData }) {
   );
 }
 
-export default CarInfo;
+export default Info;

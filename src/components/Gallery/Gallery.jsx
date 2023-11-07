@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import CarGalleryItem from '../GalleryItem/GalleryItem';
+import GalleryItem from '../GalleryItem/GalleryItem';
 import { selectAdverts, selectIsLoading } from '../../redux/car/electors';
 import { useEffect, useState } from 'react';
 import { getAllAdverts } from '../../redux/car/Operations';
@@ -8,7 +8,7 @@ import Filter from '../Filte/Filter';
 import { selectFilters } from '../../redux/filters/filtersSelectors';
 import Loader from '../Loader/Loader';
 
-function CarGallery() {
+function Gallery() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getAllAdverts());
@@ -46,7 +46,7 @@ function CarGallery() {
         <Grid>
           {filteredAdverts.slice(0, visibleCount).map(item => (
             <CarItem key={item.id}>
-              <CarGalleryItem data={item} />
+              <GalleryItem data={item} />
             </CarItem>
           ))}
         </Grid>
@@ -66,4 +66,4 @@ function CarGallery() {
   );
 }
 
-export default CarGallery;
+export default Gallery;

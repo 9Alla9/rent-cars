@@ -7,13 +7,13 @@ import {
   GridWrap,
   LoadMoreStyled,
 } from '../Gallery/Gallery.styled';
-import CarGalleryItem from '../GalleryItem/GalleryItem';
+import GalleryItem from '../GalleryItem/GalleryItem';
 import { getAllAdverts } from '../../redux/car/Operations';
 import { NotFoundMessage } from './Favorite.styled';
 import Button from '../Buttons/Button';
 import { Link } from 'react-router-dom';
 
-function FavoriteCarGallery() {
+function Favorite() {
   const [visibleCount, setVisibleCount] = useState(8);
   const dispatch = useDispatch();
   useEffect(() => {
@@ -33,7 +33,7 @@ function FavoriteCarGallery() {
         <Grid>
           {favoriteAdverts.slice(0, visibleCount).map(item => (
             <CarItem key={item.id}>
-              <CarGalleryItem data={item} />
+              <GalleryItem data={item} />
             </CarItem>
           ))}
         </Grid>
@@ -56,4 +56,4 @@ function FavoriteCarGallery() {
   }
 }
 
-export default FavoriteCarGallery;
+export default Favorite;

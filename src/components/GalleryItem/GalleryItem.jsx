@@ -9,14 +9,14 @@ import {
   Title,
   TitleWrap,
 } from './GalleryItem.styled';
-import ModalContainer from '../Modal/Modal';
-import CarInfo from '../Info/Info';
+import Modal from '../Modal/Modal';
+import Info from '../Info/Info';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectFavorites } from '../../redux/car/Selectors';
 import { addFavoriteId, removeFavoriteId } from '../../redux/car/Slice';
 import { toast } from 'react-hot-toast';
 
-function CarGalleryItem({ data }) {
+function GalleryItem({ data }) {
   const {
     id,
     year,
@@ -116,8 +116,8 @@ function CarGalleryItem({ data }) {
         </ul>
       </DataWrap>
       <Button width={274} text="Learn more" onClick={toggleModal} />
-      <ModalContainer isOpen={modalIsOpen} onRequestClose={toggleModal}>
-        <CarInfo
+      <Modal isOpen={modalIsOpen} onRequestClose={toggleModal}>
+        <Info
           modalIsOpen={modalIsOpen}
           toggleModal={toggleModal}
           id={id}
@@ -125,9 +125,9 @@ function CarGalleryItem({ data }) {
           country={country}
           altText={altText}
         />
-      </ModalContainer>
+      </Modal>
     </>
   );
 }
 
-export default CarGalleryItem;
+export default GalleryItem;
